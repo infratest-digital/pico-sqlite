@@ -1,8 +1,5 @@
 cmake_minimum_required(VERSION 3.13...3.27)
 
-include(vendor/pico_sdk_import.cmake)
-add_subdirectory(vendor/pico-vfs)
-
 project(sqlite3 C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
