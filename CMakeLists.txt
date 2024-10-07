@@ -21,6 +21,7 @@ target_compile_options(libsqlite3 INTERFACE
   -Wno-unused-variable -Wno-unused-value
   -DPICO_SDK=1
   -DHAVE_NANOSLEEP=0
+  $<$<CONFIG:Debug>:-DSQLITE_DEBUG>
   -DSQLITE_SMALL_STACK=1
   -DSQLITE_ENABLE_MEMSYS5
   -DSQLITE_DEFAULT_MMAP_SIZE=0
@@ -62,5 +63,7 @@ target_compile_options(libsqlite3 INTERFACE
   -DSQLITE_TEMP_STORE=1
   -DSQLITE_THREADSAFE=0
   -DSQLITE_UNTESTABLE
+  -DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
+  -DSQLITE_ENABLE_API_ARMOR
 )
 target_link_libraries(libsqlite3 INTERFACE pico_stdlib)
